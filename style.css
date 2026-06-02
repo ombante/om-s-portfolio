@@ -93,6 +93,12 @@
      border-bottom: 1px solid rgba(255, 219, 149, 0.12);
  }
 
+ .header-actions {
+     display: inline-flex;
+     align-items: center;
+     gap: 1.4rem;
+ }
+
  .brand {
      display: inline-grid;
      place-items: center;
@@ -120,6 +126,35 @@
  .resume-link {
      color: #f7eddc;
      font-weight: 600;
+ }
+
+ .music-toggle {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     padding: 0.8rem 1.1rem;
+     border-radius: 999px;
+     border: 1px solid rgba(72, 42, 26, 0.78);
+     background: rgba(72, 42, 26, 0.55);
+     color: #f7eddc;
+     font-weight: 700;
+     cursor: pointer;
+     opacity: 0;
+     transform: translateY(-6px);
+     transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
+ }
+
+ .music-toggle.is-visible {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ .music-toggle.is-playing {
+     color: var(--gold-strong);
+ }
+
+ .music-toggle:hover {
+     color: var(--gold-strong);
  }
 
  .nav a {
@@ -204,9 +239,9 @@
  }
 
  .hero .eyebrow {
-    font-size: 3rem;
+     font-size: 3rem;
      color: #5b3a24;
-    font-weight: 900;
+     font-weight: 900;
  }
 
  h1,
@@ -284,10 +319,10 @@
      color: #fff6e7;
  }
 
-.pop-btn {
-    animation: popBounce 2.6s ease-in-out infinite;
-    transform-origin: center;
-}
+ .pop-btn {
+     animation: popBounce 2.6s ease-in-out infinite;
+     transform-origin: center;
+ }
 
  .primary-btn:hover,
  .secondary-btn:hover,
@@ -610,22 +645,22 @@
      transform: translateY(0);
  }
 
-.glass-card.reveal,
-.timeline-card.reveal,
-.project-card.reveal,
-.contact-form.reveal {
-    opacity: 0;
-    transform: translateY(36px) scale(0.92);
-    transition: opacity 1.2s ease, transform 1.2s ease;
-}
+ .glass-card.reveal,
+ .timeline-card.reveal,
+ .project-card.reveal,
+ .contact-form.reveal {
+     opacity: 0;
+     transform: translateY(36px) scale(0.92);
+     transition: opacity 1.2s ease, transform 1.2s ease;
+ }
 
-.glass-card.reveal.visible,
-.timeline-card.reveal.visible,
-.project-card.reveal.visible,
-.contact-form.reveal.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
+ .glass-card.reveal.visible,
+ .timeline-card.reveal.visible,
+ .project-card.reveal.visible,
+ .contact-form.reveal.visible {
+     opacity: 1;
+     transform: translateY(0) scale(1);
+ }
 
  @keyframes popPulse {
 
@@ -646,17 +681,17 @@
          opacity: 0.6;
      }
 
-    @keyframes popBounce {
+     @keyframes popBounce {
 
-        0%,
-        100% {
-            transform: scale(1);
-        }
+         0%,
+         100% {
+             transform: scale(1);
+         }
 
-        45% {
-            transform: scale(1.08);
-        }
-    }
+         45% {
+             transform: scale(1.08);
+         }
+     }
 
      100% {
          width: 220%;
@@ -681,18 +716,18 @@
              animation: none;
          }
 
-        .pop-btn {
-            animation: none;
-        }
+         .pop-btn {
+             animation: none;
+         }
 
-        .glass-card.reveal,
-        .timeline-card.reveal,
-        .project-card.reveal,
-        .contact-form.reveal {
-            transition: none;
-            transform: none;
-            opacity: 1;
-        }
+         .glass-card.reveal,
+         .timeline-card.reveal,
+         .project-card.reveal,
+         .contact-form.reveal {
+             transition: none;
+             transform: none;
+             opacity: 1;
+         }
      }
 
      50% {
@@ -727,6 +762,12 @@
      .site-header {
          flex-direction: column;
          align-items: flex-start;
+     }
+
+     .header-actions {
+         width: 100%;
+         justify-content: flex-start;
+         flex-wrap: wrap;
      }
 
      .nav {
